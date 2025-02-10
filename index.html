@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片压缩工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <svg class="logo" width="40" height="40" viewBox="0 0 40 40">
+                <rect x="8" y="8" width="24" height="24" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M14 20L18 24L26 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <h1>图片压缩工具</h1>
+        </div>
+
+        <div class="upload-area" id="dropZone">
+            <input type="file" id="fileInput" accept="image/*" hidden>
+            <svg class="upload-icon" width="48" height="48" viewBox="0 0 48 48">
+                <path d="M24 4v28M12 20l12-12 12 12M8 36h32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <p>点击或拖拽图片到这里</p>
+        </div>
+
+        <div class="preview-container" hidden>
+            <div class="preview-wrapper">
+                <img id="preview" alt="预览图">
+            </div>
+            
+            <div class="controls">
+                <div class="quality-control">
+                    <label for="quality">压缩质量：</label>
+                    <input type="range" id="quality" min="0" max="100" value="80">
+                    <span id="qualityValue">80%</span>
+                </div>
+                
+                <div class="size-control">
+                    <label for="maxWidth">最大宽度：</label>
+                    <input type="number" id="maxWidth" value="1920" min="100">
+                    <span>px</span>
+                </div>
+            </div>
+
+            <div class="info">
+                <p>原始大小：<span id="originalSize">0 KB</span></p>
+                <p>压缩后：<span id="compressedSize">0 KB</span></p>
+            </div>
+
+            <button id="downloadBtn" class="download-btn">下载压缩图片</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
